@@ -11,6 +11,7 @@ class Experience extends Model
     use HasFactory, Sluggable;
 
     protected $table = 'experiences';
+    protected $dates = ['start_year', 'end_year'];
 
     protected $fillable = [
         'title', 'slug', 'type', 'description', 'start_year', 'end_year'
