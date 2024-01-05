@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->decimal('price', 16, 0);
+            $table->boolean('recommended')->default(0);
+            $table->string('image')->nullable();
             $table->string('description');
             $table->timestamps();
         });

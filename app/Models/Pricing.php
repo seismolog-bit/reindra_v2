@@ -12,6 +12,6 @@ class Pricing extends Model
     protected $table = 'pricings';
 
     protected $fillable = [
-        'title', 'price', 'description'
+        'title', 'price', 'description', 'recommended', 'image'
     ];
 }

@@ -17,14 +17,14 @@ class ExperienceSeeder extends Seeder
     {
         Experience::create([
             'title' => 'Irit.io',
-            'type' => 'Full Part',
+            'type' => 'Work',
             'description' => 'Bekerja mulai tahun 2018',
             'start_year' => '2018-08-27',
             'end_year' => '2020-12-31',
         ]);
         Experience::create([
             'title' => 'PT Besar Intan Gemilang',
-            'type' => 'Full Part',
+            'type' => 'Work',
             'description' => 'Bekerja mulai tahun 2022',
             'start_year' => '2022-07-27',
         ]);
