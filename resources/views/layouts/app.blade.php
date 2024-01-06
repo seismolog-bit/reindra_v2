@@ -6,15 +6,15 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <meta name="description" content="Bolby - Portfolio/CV/Resume HTML Template">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
 
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('css/all.min.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('css/simple-line-icons.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('css/slick.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('css/animate.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" type="text/css" media="all">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/simple-line-icons.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all">
 
 </head>
 
@@ -47,7 +47,8 @@
                 <defs>
                     <filter id="goo">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
-                        <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                        <feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo" />
                         <feBlend in="SourceGraphic" in2="goo" />
                     </filter>
                 </defs>
@@ -66,8 +67,8 @@
             </div>
             <!-- logo image -->
             <div class="site-logo">
-                <a href="{{route('index')}}">
-                    <img src="{{asset('images/logo-dark.svg')}}" alt="Bolby" />
+                <a href="{{ route('index') }}">
+                    <img src="{{ asset('images/logo-dark.svg') }}" alt="Bolby" />
                 </a>
             </div>
         </div>
@@ -78,7 +79,7 @@
 
         <!-- logo image -->
         <div class="site-logo">
-            <a href="index-light.html">
+            <a href="{{ route('index') }}">
                 <img src="images/logo-dark.svg" alt="Bolby" />
             </a>
         </div>
@@ -116,23 +117,23 @@
     <a href="javascript:" id="return-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <!-- SCRIPTS -->
-    <script src="{{asset('js/jquery-1.12.3.min.js')}}"></script>
-    <script src="{{asset('js/jquery.easing.min.js')}}"></script>
-    <script src="{{asset('js/jquery.waypoints.min.js')}}"></script>
-    <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
-    <script src="{{asset('js/infinite-scroll.min.js')}}"></script>
-    <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{asset('js/slick.min.js')}}"></script>
-    <script src="{{asset('js/contact.js')}}"></script>
-    <script src="{{asset('js/validator.js')}}"></script>
-    <script src="{{asset('js/wow.min.js')}}"></script>
-    <script src="{{asset('js/morphext.min.js')}}"></script>
-    <script src="{{asset('js/parallax.min.js')}}"></script>
-    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('js/custom.js')}}"></script>
+    <script src="{{ asset('js/jquery-1.12.3.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/infinite-scroll.min.js') }}"></script>
+    <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/contact.js') }}"></script>
+    <script src="{{ asset('js/validator.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/morphext.min.js') }}"></script>
+    <script src="{{ asset('js/parallax.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
 
 </body>
 
