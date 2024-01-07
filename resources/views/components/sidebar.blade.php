@@ -1,7 +1,7 @@
 <ul class="navbar-nav flex-column" id="navbarVerticalNav">
     <li class="nav-item">
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1 {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}" role="button" data-bs-toggle="" aria-expanded="false">
+            <a class="nav-link label-1 {{ request()->routeIs('admin.index') ? 'active' : '' }}" href="{{ route('admin.index') }}" role="button" data-bs-toggle="" aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
                         <span data-feather="compass"></span>
@@ -31,21 +31,21 @@
             <div class="parent-wrapper label-1">
                 <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-home">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}" data-bs-toggle="" aria-expanded="false">
+                        <a class="nav-link {{ request()->routeIs('admin.portfolio.create') ? 'active' : '' }}" href="{{ route('admin.portfolio.create') }}" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-text">Create New</span>
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}" data-bs-toggle="" aria-expanded="false">
+                        <a class="nav-link {{ request()->routeIs('admin.portfolio.index') ? 'active' : '' }}" href="{{ route('admin.portfolio.index') }}" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-text">Project List</span>
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}" data-bs-toggle="" aria-expanded="false">
+                        <a class="nav-link {{ request()->routeIs('admin.portfolio-category.*') ? 'active' : '' }}" href="{{ route('admin.portfolio-category.index') }}" data-bs-toggle="" aria-expanded="false">
                             <div class="d-flex align-items-center">
                                 <span class="nav-link-text">Project Categories</span>
                             </div>
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -66,7 +66,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -82,7 +82,7 @@
         <p class="navbar-vertical-label">Themes</p>
         <hr class="navbar-vertical-line">
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -93,7 +93,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -104,7 +104,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -121,7 +121,7 @@
         <p class="navbar-vertical-label">Modules</p>
         <hr class="navbar-vertical-line">
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1 {{ request()->routeIs('admin.user.*') ? 'active' : '' }}" href="{{ route('admin.user.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -132,7 +132,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('home') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1" href="{{ route('admin.config.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">

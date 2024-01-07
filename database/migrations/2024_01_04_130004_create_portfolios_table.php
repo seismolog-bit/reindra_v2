@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->date('year');
             $table->string('tech');
-            $table->json('porfolio_categories');
-            $table->bigInteger('views');
-            $table->string('url');
+            $table->json('portfolio_categories');
+            $table->bigInteger('views')->default(0);
+            $table->string('url')->nullable();
             $table->timestamps();
         });
     }

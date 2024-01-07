@@ -20,6 +20,8 @@
     <script src="{{ asset('assets/vendors/simplebar/simplebar.min.js') }}"></script>
     <script src="{{ asset('assets/js/config.js') }}"></script>
 
+    @yield('style')
+
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"
@@ -75,7 +77,7 @@
                     data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse"
                     aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span
                         class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
-                <a class="navbar-brand me-1 me-sm-3" href="{{ route('home') }}">
+                <a class="navbar-brand me-1 me-sm-3" href="{{ route('admin.index') }}">
                     <div class="d-flex align-items-center">
                         <div class="d-flex align-items-center"><img src="{{ asset('assets/img/icons/logo.png') }}"
                                 alt="phoenix" width="27" />
@@ -306,6 +308,9 @@
     <script src="{{ asset('assets/vendors/list.js/list.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/feather-icons/feather.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/dayjs/dayjs.min.js') }}"></script>
+
+    @yield('script')
+
     <script src="{{ asset('assets/js/phoenix.js') }}"></script>
 </body>
 
