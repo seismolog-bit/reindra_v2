@@ -24,4 +24,9 @@ class ThemeCategory extends Model
             ]
         ];
     }
+
+    public function themes()
+    {
+        return $this->hasMany(Theme::class, 'theme_category', 'id');
+    }
 }

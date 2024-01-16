@@ -16,13 +16,13 @@ class ThemeCategorySeeder extends Seeder
     public function run()
     {
         ThemeCategory::create([
-            'title' => 'Basic'
+            'title' => 'Silver'
         ]);
         ThemeCategory::create([
-            'title' => 'Premium'
+            'title' => 'Gold'
         ]);
         ThemeCategory::create([
-            'title' => 'Advance'
+            'title' => 'Platinum'
         ]);
     }
 }

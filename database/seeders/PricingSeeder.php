@@ -16,18 +16,19 @@ class PricingSeeder extends Seeder
     public function run()
     {
         Pricing::create([
-            'title' => 'Basic',
-            'price' => 3500000,
-            'description' => '250 Pilihan theme'
+            'title' => 'Silver',
+            'price' => 4499000,
+            'description' => '250 Pilihan theme',
         ]);
         Pricing::create([
-            'title' => 'Premium',
-            'price' => 5750000,
-            'description' => '500 Pilihan theme'
+            'title' => 'Gold',
+            'price' => 7750000,
+            'description' => '500 Pilihan theme',
+            'recommended' => true
         ]);
         Pricing::create([
-            'title' => 'Advance',
-            'price' => 6430000,
+            'title' => 'Platinum',
+            'price' => 10500000,
             'description' => '750 Pilihan theme'
         ]);
     }

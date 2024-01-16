@@ -12,8 +12,14 @@ class Portfolio extends Model
 
     protected $table = 'portfolios';
 
+    protected $casts = [
+        'portfolio_categories' => 'array',
+    ];
+
+    protected $dates = ['year'];
+
     protected $fillable = [
-        'title', 'slug', 'image', 'description', 'year', 'tech', 'portfolio_categories', 'views', 'url'
+        'title', 'slug', 'work', 'image', 'description', 'year', 'tech', 'portfolio_categories', 'views', 'url'
     ];
 
     public function sluggable(): array
@@ -23,5 +29,15 @@ class Portfolio extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function portfolioCategories()
+    {
+        return $this->belongsToMany(PortfolioCategory::class, 'portfolio_categories', 'portfolio_id', 'portfolio_category_id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(PortfolioCategory::class, 'portfolio_categories');
     }
 }
