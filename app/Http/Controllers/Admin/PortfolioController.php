@@ -49,7 +49,7 @@ class PortfolioController extends Controller
 
             // image resize
             $image_file = Image::make($url->getRealPath());
-            $image_file->resize(720, null, function($const) {
+            $image_file->resize(300, null, function($const) {
                 $const->aspectRatio();
             });
 
@@ -94,7 +94,7 @@ class PortfolioController extends Controller
 
             // image resize
             $image_file = Image::make($url->getRealPath());
-            $image_file->resize(720, null, function($const) {
+            $image_file->resize(300, null, function($const) {
                 $const->aspectRatio();
             });
 
