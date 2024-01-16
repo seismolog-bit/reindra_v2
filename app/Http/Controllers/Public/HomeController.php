@@ -18,7 +18,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $portfolios = Portfolio::orderBy('id', 'desc')->get();
+        $portfolios = Portfolio::orderBy('year', 'desc')->get();
         $portfolio_categories = PortfolioCategory::get();
         $experiences = Experience::orderBy('start_year', 'desc')->get();
         $pricings = Pricing::get();
