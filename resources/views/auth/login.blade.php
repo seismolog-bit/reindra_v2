@@ -4,11 +4,12 @@
     <div class="auth-form-box">
         <form action="{{ route('login') }}" method="post">
             @csrf
-            <div class="text-center mb-7"><a class="d-flex flex-center text-decoration-none mb-4" href="{{ route('index') }}">
+            <div class="text-center mb-7">
+                {{-- <a class="d-flex flex-center text-decoration-none mb-4" href="{{ route('index') }}">
                     <div class="d-flex align-items-center fw-bolder fs-3 d-inline-block">
-                        <img src="{{ asset('assets/img/icons/logo.png') }}" alt="phoenix" width="58" />
+                        <img src="{{ asset('images/logo.png') }}" alt="phoenix" width="58" />
                     </div>
-                </a>
+                </a> --}}
                 <h3 class="text-body-highlight">Sign In</h3>
                 <p class="text-body-tertiary">Get access to your account</p>
             </div>

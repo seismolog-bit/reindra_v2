@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->date('year');
             $table->string('tech');
+            $table->string('work');
             $table->json('portfolio_categories');
             $table->bigInteger('views')->default(0);
             $table->string('url')->nullable();

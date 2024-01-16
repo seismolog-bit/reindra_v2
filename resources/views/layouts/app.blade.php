@@ -21,7 +21,7 @@
 <body>
 
     <!-- Preloader -->
-    <div id="preloader" class="light">
+    {{-- <div id="preloader" class="light">
         <div class="outer">
             <!-- Google Chrome -->
             <div class="infinityChrome">
@@ -54,7 +54,7 @@
                 </defs>
             </svg>
         </div>
-    </div>
+    </div> --}}
 
     <!-- mobile header -->
     <header class="mobile-header-1 light">
@@ -68,7 +68,7 @@
             <!-- logo image -->
             <div class="site-logo">
                 <a href="{{ route('index') }}">
-                    <img src="{{ asset('images/logo-dark.svg') }}" alt="Bolby" />
+                    <img src="{{ asset('images/logo.png') }}" alt="Reindra" />
                 </a>
             </div>
         </div>
@@ -80,7 +80,7 @@
         <!-- logo image -->
         <div class="site-logo">
             <a href="{{ route('index') }}">
-                <img src="images/logo-dark.svg" alt="Bolby" />
+                <img src="{{asset('images/logo.png')}}" alt="Reindra" />
             </a>
         </div>
 
@@ -134,6 +134,8 @@
     <script src="{{ asset('js/parallax.min.js') }}"></script>
     <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+
+    @yield('script')
 
 </body>
 

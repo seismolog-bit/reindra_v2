@@ -8,20 +8,18 @@
             <!-- intro -->
             <div class="intro">
                 <!-- avatar image -->
-                <img src="images/avatar-1.svg" alt="Bolby" class="mb-4" />
+                <img src="{{asset('images/avatar.png')}}" alt="Reindra" class="mb-4" />
 
                 <!-- info -->
-                <h1 class="mb-2 mt-0">Bolby Doe</h1>
+                <h1 class="mb-2 mt-0">Indra Wahyudi</h1>
                 <span>I'm a <span class="text-rotating">UI/UX designer, Front-End developer, Photography
                         lover</span></span>
 
                 <!-- social icons -->
                 <ul class="social-icons light list-inline mb-0 mt-4">
-                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li class="list-inline-item"><a href="https://linkedin.com/in/reindra/"><i
-                                class="fab fa-linkedin"></i></a></li>
-                    <li class="list-inline-item"><a href="https://github.com/seismolog-bit/"><i
-                                class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/seismolog-bit/"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a href="https://linkedin.com/in/reindra/"><i class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/indrwyi/"><i class="fab fa-instagram"></i></a></li>
                     {{-- <li class="list-inline-item"><a href="#"><i class="fab fa-dribbble"></i></a></li> --}}
                 </ul>
 
@@ -61,7 +59,7 @@
                 <div class="col-md-3">
                     <div class="text-center text-md-left">
                         <!-- avatar image -->
-                        <img src="images/avatar-2.svg" alt="Bolby" />
+                        <img src="{{asset('images/avatar.png')}}" alt="Reindra" />
                     </div>
                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                 </div>
@@ -71,8 +69,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <!-- about text -->
-                                <p>I am Bolby Doe, web developer from London, United Kingdom. I have rich experience
-                                    in web site design and building and customization, also I am good at WordPress.
+                                <p>I'm Indra Wahyudi, a mobile and web developer from West Java, Indonesia. I have rich experience in the design and development of mobile applications with Flutter framework, websites and customization.
                                 </p>
                                 <div class="mt-3">
                                     <a href="#" class="btn btn-default">Download CV</a>
@@ -98,11 +95,11 @@
                                 <div class="skill-item">
                                     <div class="skill-info clearfix">
                                         <h4 class="float-left mb-3 mt-0">UI/UX design</h4>
-                                        <span class="float-right">95%</span>
+                                        <span class="float-right">90%</span>
                                     </div>
                                     <div class="progress">
                                         <div class="progress-bar data-background" role="progressbar" aria-valuemin="0"
-                                            aria-valuemax="100" aria-valuenow="95" data-color="#FF4C60">
+                                            aria-valuemax="100" aria-valuenow="90" data-color="#FF4C60">
                                         </div>
                                     </div>
                                     <div class="spacer" data-height="20"></div>
@@ -112,11 +109,11 @@
                                 <div class="skill-item">
                                     <div class="skill-info clearfix">
                                         <h4 class="float-left mb-3 mt-0">Photography</h4>
-                                        <span class="float-right">70%</span>
+                                        <span class="float-right">75%</span>
                                     </div>
                                     <div class="progress">
                                         <div class="progress-bar data-background" role="progressbar" aria-valuemin="0"
-                                            aria-valuemax="100" aria-valuenow="70" data-color="#6C6CE5">
+                                            aria-valuemax="100" aria-valuenow="75" data-color="#6C6CE5">
                                         </div>
                                     </div>
                                 </div>
@@ -203,8 +200,8 @@
                         data-color="#6C6CE5">
                         <img src="images/service-1.svg" alt="UI/UX design" />
                         <h3 class="mb-3 mt-0">UI/UX design</h3>
-                        <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
-                            ligula eget.</p>
+                        {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
+                            ligula eget.</p> --}}
                     </div>
                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                 </div>
@@ -215,8 +212,8 @@
                         data-color="#F9D74C">
                         <img src="images/service-2.svg" alt="UI/UX design" />
                         <h3 class="mb-3 mt-0">Web Development</h3>
-                        <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
-                            ligula eget.</p>
+                        {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
+                            ligula eget.</p> --}}
                     </div>
                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                 </div>
@@ -227,8 +224,8 @@
                         data-color="#F97B8B">
                         <img src="images/service-3.svg" alt="UI/UX design" />
                         <h3 class="mb-3 mt-0">Photography</h3>
-                        <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
-                            ligula eget.</p>
+                        {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
+                            ligula eget.</p> --}}
                     </div>
                 </div>
 
@@ -349,28 +346,51 @@
 
                 <!-- portfolio item with category slug-->
                 @foreach ($portfolios as $portfolio)
-                    <div class="col-md-4 col-sm-6 grid-item creative design">
-                        <a href="#small-dialog" class="work-content">
+                    <div
+                        class="col-md-4 col-sm-6 grid-item 
+                    @foreach ($portfolio->portfolio_categories as $categoryId)
+                        @php
+                            $category = \App\Models\PortfolioCategory::find($categoryId);
+                        @endphp
+
+                        @if ($category)
+                            {{ $category->slug }}
+                        @endif @endforeach
+                    ">
+                        <a href="#small-{{ $portfolio->slug }}" class="work-content">
                             <div class="portfolio-item rounded shadow-dark">
                                 <div class="details">
-                                    <span class="term">Creative</span>
+                                    <span class="term">
+                                        @foreach ($portfolio->portfolio_categories as $categoryId)
+                                            @php
+                                                $category = \App\Models\PortfolioCategory::find($categoryId);
+                                            @endphp
+
+                                            @if ($category)
+                                                {{ $category->title }}
+                                                @if (!$loop->last)
+                                                    -
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    </span>
                                     <h4 class="title">{{ $portfolio->title }}</h4>
                                     <span class="more-button"><i class="icon-options"></i></span>
                                 </div>
                                 <div class="thumb">
-                                    <img src="images/works/2.svg" alt="Portfolio-title" />
+                                    <img src="{{ asset($portfolio->image) }}" alt="{{ $portfolio->title }}" />
                                     <div class="mask"></div>
                                 </div>
                             </div>
                         </a>
-                        <div id="small-dialog" class="white-popup zoom-anim-dialog mfp-hide">
-                            <img src="images/single-work.svg" alt="Title" />
-                            <h2>Guest App Walkthrough Screens</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam hendrerit nibh in massa
-                                semper rutrum. In rhoncus eleifend mi id tempus.</p>
-                            <p>Donec consectetur, libero at pretium euismod, nisl felis lobortis urna, id tristique nisl
-                                lectus eget ligula.</p>
-                            <a href="#" class="btn btn-default">View on Dribbble</a>
+                        <div id="small-{{ $portfolio->slug }}" class="white-popup zoom-anim-dialog mfp-hide">
+                            <img class="w-100 rounded" src="{{ asset($portfolio->image) }}"
+                                alt="{{ $portfolio->title }}" />
+                            <h2>{{ $portfolio->title }}</h2>
+                            <p>{{ $portfolio->year->format('M Y') }} | As {{$portfolio->work}}</p>
+                            <p>{{ $portfolio->description }}</p>
+                            <p>Tech: {{ $portfolio->tech }}</p>
+                            <a href="{{ $portfolio->url }}" class="btn btn-default">View project</a>
                         </div>
                     </div>
                 @endforeach
@@ -378,14 +398,14 @@
             </div>
 
             <!-- more button -->
-            <div class="load-more text-center mt-4">
+            {{-- <div class="load-more text-center mt-4">
                 <a href="javascript:" class="btn btn-default"><i class="fas fa-spinner"></i> Load more</a>
                 <!-- numbered pagination (hidden for infinite scroll) -->
                 <ul class="portfolio-pagination list-inline d-none">
                     <li class="list-inline-item">1</li>
                     <li class="list-inline-item"><a href="works-2.html">2</a></li>
                 </ul>
-            </div>
+            </div> --}}
 
         </div>
 
@@ -411,12 +431,14 @@
                             @if ($pricing->recommended)
                                 <span class="badge">Recommended</span>
                             @endif
-                            <img src="images/price-2.svg" alt="Premium" />
+                            <img src="{{ asset($pricing->image) }}" alt="{{ $pricing->title }}" />
                             <h2 class="plan">{{ $pricing->title }}</h2>
-                            <p>{{ $pricing->description }}</p>
-                            <p>Mon-Fri support</p>
+                            <div class="price-description">
+                                {!! $pricing->description !!}
+                            </div>
+                            <p class="mt-2">24/7 support</p>
                             <h3 class="price">{{ number_format($pricing->price) }}</h3>
-                            <a href="#" class="btn btn-default">Get Started</a>
+                            <a href="{{ route('pricing.show', $pricing->slug) }}" class="btn btn-default">Get Started</a>
                         </div>
                     </div>
                 @endforeach
@@ -632,66 +654,14 @@
 
             <div class="row">
 
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <!-- contact info -->
                     <div class="contact-info">
                         <h3 class="wow fadeInUp">Let's talk about everything!</h3>
-                        <p class="wow fadeInUp">Don't like forms? Send me an <a href="mailto:name@example.com">email</a>.
+                        <p class="wow fadeInUp">Don't like forms? Send me an <a href="mailto:reindrawahyudi@gmail.com">email</a>.
                             👋
                         </p>
                     </div>
-                </div>
-
-                <div class="col-md-8">
-                    <!-- Contact Form -->
-                    <form id="contact-form" class="contact-form mt-6" method="post" action="form/contact.php">
-
-                        <div class="messages"></div>
-
-                        <div class="row">
-                            <div class="column col-md-6">
-                                <!-- Name input -->
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="InputName" id="InputName"
-                                        placeholder="Your name" required="required" data-error="Name is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="column col-md-6">
-                                <!-- Email input -->
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="InputEmail" name="InputEmail"
-                                        placeholder="Email address" required="required" data-error="Email is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="column col-md-12">
-                                <!-- Email input -->
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="InputSubject" name="InputSubject"
-                                        placeholder="Subject" required="required" data-error="Subject is required.">
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-
-                            <div class="column col-md-12">
-                                <!-- Message textarea -->
-                                <div class="form-group">
-                                    <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" placeholder="Message"
-                                        required="required" data-error="Message is required."></textarea>
-                                    <div class="help-block with-errors"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" name="submit" id="submit" value="Submit"
-                            class="btn btn-default">Send
-                            Message</button><!-- Send Button -->
-
-                    </form>
-                    <!-- Contact Form end -->
                 </div>
 
             </div>

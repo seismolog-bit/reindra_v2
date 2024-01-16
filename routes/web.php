@@ -18,7 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Auth::routes();
+//pricing
+Route::get('/pricing/{slug}', [HomeController::class, 'pricingShow'])->name('pricing.show');
+Route::get('/pricing-load-more', [HomeController::class, 'themeLoadMore'])->name('themeLoadMore');
+
+Route::post('/contact', [HomeController::class, 'contactStore'])->name('contact.store');
+
+Auth::routes(['register' => false]);
 
 Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
@@ -28,7 +34,9 @@ Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () 
         'portfolio' => 'portfolio:slug',
     ]);
     Route::resource('portfolio-category', App\Http\Controllers\Admin\PortfolioCategoryController::class);
-    Route::resource('experience', App\Http\Controllers\Admin\ExerienceController::class);
+    Route::resource('experience', App\Http\Controllers\Admin\ExerienceController::class)->parameters([
+        'experience' => 'experience:slug',
+    ]);
     Route::resource('pricing', App\Http\Controllers\Admin\PricingController::class);
 
     // Themes

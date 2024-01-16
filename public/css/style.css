@@ -1249,6 +1249,10 @@ select.portfolio-filter-mobile {
   border-bottom-right-radius: 0;
 }
 
+.price-description p {
+    margin-bottom: 0px;
+}
+
 /*=================================================================*/
 /*                      TESTIMONIALS                              
 /*=================================================================*/
@@ -2174,6 +2178,30 @@ body.dark .blog-page-section .blog-single {
   top: 0;
   z-index: 1;
 }
+
+.timeline.feature .timeline-container::after {
+    content: "\e043";
+    background: #FFF;
+    font-family: "simple-line-icons";
+    font-size: 24px;
+    color: #FF4C60;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .timeline.service .timeline-container::after {
+    content: "\e05c";
+    background: #FFF;
+    font-family: "simple-line-icons";
+    font-size: 24px;
+    color: #FF4C60;
+    position: absolute;
+    left: -7px;
+    top: 0;
+    z-index: 1;
+  }
 
 .timeline .content {
   position: relative;

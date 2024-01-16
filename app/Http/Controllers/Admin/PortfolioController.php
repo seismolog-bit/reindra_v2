@@ -36,6 +36,7 @@ class PortfolioController extends Controller
             'description' => 'required', 
             'year' => 'required', 
             'tech' => 'required', 
+            'work' => 'required', 
             'portfolio_categories' => 'required'
         ]); 
 
@@ -80,6 +81,7 @@ class PortfolioController extends Controller
             'description' => 'required', 
             'year' => 'required', 
             'tech' => 'required', 
+            'work' => 'required', 
             'portfolio_categories' => 'required'
         ]); 
 
@@ -108,6 +110,7 @@ class PortfolioController extends Controller
         }
 
         $portfolio->title = $request->title;
+        $portfolio->work = $request->work;
         $portfolio->image = $request->image ? $image : $portfolio->image;
         $portfolio->description = $request->description;
         $portfolio->year = $request->year;

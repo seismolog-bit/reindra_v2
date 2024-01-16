@@ -17,10 +17,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('image');
-            $table->json('theme_categories');
-            $table->json('theme_tags');
+            $table->string('theme_category');
+            $table->json('theme_tags')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

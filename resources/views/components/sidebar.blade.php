@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1 {{ request()->routeIs('admin.experience.*') ? 'active' : '' }}" href="{{ route('admin.experience.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -66,7 +66,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1 {{ request()->routeIs('admin.pricing.*') ? 'active' : '' }}" href="{{ route('admin.pricing.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -82,7 +82,7 @@
         <p class="navbar-vertical-label">Themes</p>
         <hr class="navbar-vertical-line">
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1 {{ request()->routeIs('admin.theme.*') ? 'active' : '' }}" href="{{ route('admin.theme.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -93,7 +93,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1 {{ request()->routeIs('admin.theme-category.*') ? 'active' : '' }}" href="{{ route('admin.theme-category.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">
@@ -104,7 +104,7 @@
             </a>
         </div>
         <div class="nav-item-wrapper">
-            <a class="nav-link label-1" href="{{ route('admin.index') }}" role="button" data-bs-toggle=""
+            <a class="nav-link label-1 {{ request()->routeIs('admin.theme-tag.*') ? 'active' : '' }}" href="{{ route('admin.theme-tag.index') }}" role="button" data-bs-toggle=""
                 aria-expanded="false">
                 <div class="d-flex align-items-center">
                     <span class="nav-link-icon">

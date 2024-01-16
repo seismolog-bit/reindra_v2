@@ -8,7 +8,8 @@
         </ol>
     </nav>
     <h2 class="text-bold text-body-emphasis mb-5">Portfolio</h2>
-    <div id="members" data-list='{"valueNames":["title","category","year","views"],"page":10,"pagination":true}'>
+    <div id="members"
+        data-list='{"valueNames":["title", "work","category","tech","year","views"],"page":10,"pagination":true}'>
         <div class="row align-items-center justify-content-between g-3 mb-4">
             <div class="col col-auto">
                 <div class="search-box">
@@ -33,12 +34,16 @@
                         <tr>
                             <th class="sort align-middle" scope="col" data-sort="title"
                                 style="width:15%; min-width:200px;">TITLE</th>
+                            <th class="sort align-middle" scope="col" data-sort="work"
+                                style="width:15%; min-width:200px;">WORK AS</th>
                             <th class="sort align-middle" scope="col" data-sort="category"
                                 style="width:15%; min-width:200px;">CATEGORY</th>
+                            <th class="sort align-middle" scope="col" data-sort="tech"
+                                style="width:15%; min-width:200px;">TECH</th>
                             <th class="sort align-middle" scope="col" data-sort="year" style="width:10%;">YEAR</th>
                             <th class="sort align-middle text-end pe-0" scope="col" data-sort="views"
-                                style="width:19%;  min-width:200px;">VIEWS</th>
-                            <th class="sort align-middle text-end" scope="col" style="width:21%;  min-width:200px;">
+                                style="width:10%;  min-width:100px;">VIEWS</th>
+                            <th class="sort align-middle text-end" scope="col" style="width:15%;  min-width:150px;">
                                 ACTION</th>
                         </tr>
                     </thead>
@@ -47,13 +52,13 @@
                             <tr class="hover-actions-trigger btn-reveal-trigger position-static">
                                 <td class="title align-middle white-space-nowrap"><a
                                         class="d-flex align-items-center text-body text-hover-1000" href="#!">
-                                        <div class="avatar avatar-m">
-                                            <div class="avatar-name rounded-circle">
-                                                <span>{{ substr($portfolio->title, 0, 1) }}</span>
-                                            </div>
-                                        </div>
+                                        <img src="{{ asset($portfolio->image) }}" alt="" width="53" height="53"
+                                        class="rounded" style="object-fit: cover;"/>
                                         <h6 class="mb-0 ms-3 fw-semibold">{{ $portfolio->title }}</h6>
-                                    </a></td>
+                                    </a>
+                                </td>
+                                <td class="work align-middle white-space-nowrap text-body-tertiary">
+                                    {{ $portfolio->work }}</td>
                                 <td class="category align-middle white-space-nowrap">
                                     @foreach ($portfolio->portfolio_categories as $categoryId)
                                         @php
@@ -61,14 +66,17 @@
                                         @endphp
 
                                         @if ($category)
-                                            {{ $category->title }}
+                                            <span
+                                                class="badge badge-phoenix badge-phoenix-primary">{{ $category->title }}</span>
                                         @endif
                                     @endforeach
                                 </td>
+                                <td class="tech align-middle white-space-nowrap text-body-tertiary">
+                                    {{ $portfolio->tech }}</td>
                                 <td class="year align-middle white-space-nowrap text-body">
                                     {{ $portfolio->year->format('M Y') }}</td>
                                 <td class="views align-middle white-space-nowrap text-body-tertiary text-end">
-                                    {{ number_format($portfolio->viewsF) }}</td>
+                                    {{ number_format($portfolio->views) }}</td>
                                 <td class=" align-middle text-end white-space-nowrap text-body-tertiary">
                                     <div class="col-12 col-md-auto d-flex justify-content-end">
                                         <a href="{{ route('admin.portfolio.edit', $portfolio) }}"
@@ -80,10 +88,8 @@
                                             @csrf
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-phoenix-danger btn-icon me-2"><span
-                                            data-feather="trash"></span></button>
+                                                    data-feather="trash"></span></button>
                                         </form>
-                                        {{-- <a class="btn btn-phoenix-danger btn-icon me-2" type="button"><span
-                                                data-feather="trash"></span></a> --}}
                                     </div>
                                 </td>
                             </tr>

@@ -19,7 +19,7 @@ class Portfolio extends Model
     protected $dates = ['year'];
 
     protected $fillable = [
-        'title', 'slug', 'image', 'description', 'year', 'tech', 'portfolio_categories', 'views', 'url'
+        'title', 'slug', 'work', 'image', 'description', 'year', 'tech', 'portfolio_categories', 'views', 'url'
     ];
 
     public function sluggable(): array
@@ -33,7 +33,7 @@ class Portfolio extends Model
 
     public function portfolioCategories()
     {
-        return $this->belongsToMany(Category::class, 'portfolio_categories', 'portfolio_id', 'portfolio_category_id');
+        return $this->belongsToMany(PortfolioCategory::class, 'portfolio_categories', 'portfolio_id', 'portfolio_category_id');
     }
 
     public function category()

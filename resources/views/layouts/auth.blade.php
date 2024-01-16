@@ -66,9 +66,9 @@
                                     <!--/.bg-holder-->
                                     <div
                                         class="position-relative px-4 px-lg-7 pt-7 pb-7 pb-sm-5 text-center text-md-start pb-lg-7 pb-md-7">
-                                        <h3 class="mb-3 text-body-emphasis fs-7">Phoenix Authentication</h3>
+                                        <h3 class="mb-3 text-body-emphasis fs-7">Authentication</h3>
                                         <p class="text-body-tertiary">Give yourself some hassle-free development process
-                                            with the uniqueness of Phoenix!</p>
+                                            with the uniqueness!</p>
                                         <ul class="list-unstyled mb-0 w-max-content w-md-auto">
                                             <li class="d-flex align-items-center"><span
                                                     class="uil uil-check-circle text-success me-2"></span><span

@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6">
-                    <div class="col-12 gy-6">
+                    <div class="col-12 gy-6 form">
                         <select class="form-select" id="organizerMultiple" data-choices="data-choices" multiple=""
                             name="portfolio_categories[]" data-options='{"removeItemButton":true,"placeholder":true}'
                             required>
@@ -66,16 +66,22 @@
                 </div>
                 <div class="col-sm-6 col-md-6">
                     <div class="form-floating">
-                        <input class="form-control" id="floatingInputGrid" type="text" name="tech"
+                        <input class="form-control" id="projectTechGrid" type="text" name="tech"
                             placeholder="Project title" required />
                         <label for="floatingSelectAdmin">Project
                             Tech</label>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12">
+                <div class="col-sm-6 col-md-6">
                     <div class="form-floating">
-                        <input class="form-control" id="floatingInputGrid" type="text" placeholder="Project title"
-                            name="url" required /><label for="floatingInputGrid">Project url</label>
+                        <input class="form-control" id="projectUrlGrid" type="text" placeholder="Project title"
+                            name="url" required /><label for="projectUrlGrid">Project url</label>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6">
+                    <div class="form-floating">
+                        <input class="form-control" id="projectAsGrid" type="text" placeholder="Project title"
+                            name="work" required /><label for="projectAsGrid">Project as</label>
                     </div>
                 </div>
 

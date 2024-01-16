@@ -297,6 +297,8 @@
         </div>
     </main>
 
+    @yield('modal')
+
 
     <script src="{{ asset('assets/vendors/popper/popper.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/bootstrap/bootstrap.min.js') }}"></script>
