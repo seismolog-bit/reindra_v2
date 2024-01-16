@@ -15,7 +15,7 @@ class PortfolioController extends Controller
 {
     public function index()
     {
-        $portfolios = Portfolio::orderBy('year', 'asc')->get();
+        $portfolios = Portfolio::orderBy('year', 'desc')->get();
 
         // dd($portfolios);
 
