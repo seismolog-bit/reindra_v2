@@ -3,10 +3,17 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <meta name="description" content="Bolby - Portfolio/CV/Resume HTML Template">
+    <title>{{ config('app.name', 'Laravel') }} | Web & Mobile Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.jpg') }}">
+
+    <meta name="author" content="Indra Wahyudi">
+    <meta name="keywords"
+        content="Web Developer Indonesia, Laravel Developer, Flutter Developer, Jasa Pembuatan Website, Mobile App Developer">
+    <meta property="og:title" content="{{ config('app.name', 'Laravel') }} | Web & Mobile Developer">
+    <meta property="og:description"
+        content="Spesialis Laravel dan Flutter. Membangun website dan aplikasi modern untuk bisnis berkembang.">
+    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" type="text/css" media="all">
@@ -64,12 +71,13 @@
                 <button>
                     <span></span>
                 </button>
-            </div>
-            <!-- logo image -->
-            <div class="site-logo">
-                <a href="{{ route('index') }}">
-                    <img src="{{ asset('images/logo.png') }}" alt="Reindra" />
-                </a>
+
+                <div class="site-logo ml-3">
+                    <a href="{{ route('index') }}">
+                        <img src="{{ asset('logo.jpg') }}" alt="Reindra" style="height: 33px; width: 33px;" />
+                    </a>
+                </div>
+                <!-- logo image -->
             </div>
         </div>
     </header>
@@ -80,7 +88,7 @@
         <!-- logo image -->
         <div class="site-logo">
             <a href="{{ route('index') }}">
-                <img src="{{asset('images/logo.png')}}" alt="Reindra" />
+                <img src="{{ asset('logo.jpg') }}" alt="Reindra" width="52" />
             </a>
         </div>
 
