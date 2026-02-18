@@ -127,7 +127,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/admin/technology/',
+                url: '{{ route('admin.technology.store') }}',
                 data: formData,
                 contentType: false,
                 processData: false,

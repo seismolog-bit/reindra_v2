@@ -8,7 +8,7 @@
                         class="fas fa-times fs-9 text-white dark__text-gray-1100"></span></button>
             </div>
             <div class="modal-body">
-                <form id="editForm" class="row g-3" enctype="multipart/form-data" method="post">
+                <form id="editForm" class="row g-3" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" id="editId">
 

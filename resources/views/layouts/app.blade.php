@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>{{ config('app.name', 'Laravel') }} | Web Developer Laravel & Flutter Indonesia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.jpg') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.png') }}">
 
     <meta name="description"
         content="Reindra adalah Web & Mobile Developer spesialis Laravel dan Flutter di Indonesia. Membangun website, aplikasi mobile, dan sistem custom yang modern, cepat, dan scalable untuk bisnis berkembang.">
@@ -27,14 +27,14 @@
     <meta property="og:site_name" content="Reindra Portfolio">
 
     <!-- Ganti dengan URL gambar preview kamu -->
-    <meta property="og:image" content="{{ asset('logo.jpg') }}">
+    <meta property="og:image" content="{{ asset('logo.png') }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Reindra | Web Developer Laravel & Flutter Indonesia">
     <meta name="twitter:description"
         content="Web Developer Indonesia spesialis Laravel & Flutter. Solusi website dan aplikasi mobile profesional.">
-    <meta name="twitter:image" content="{{ asset('logo.jpg') }}">
+    <meta name="twitter:image" content="{{ asset('logo.png') }}">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" type="text/css" media="all">
@@ -95,7 +95,7 @@
 
                 <div class="site-logo ml-3">
                     <a href="{{ route('index') }}">
-                        <img src="{{ asset('logo.jpg') }}" alt="Reindra" style="height: 33px; width: 33px;" />
+                        <img src="{{ asset('logo.png') }}" alt="Reindra" style="height: 33px; width: 33px;" />
                     </a>
                 </div>
                 <!-- logo image -->
@@ -109,7 +109,7 @@
         <!-- logo image -->
         <div class="site-logo">
             <a href="{{ route('index') }}">
-                <img src="{{ asset('logo.jpg') }}" alt="Reindra" width="52" />
+                <img src="{{ asset('logo.png') }}" alt="Reindra" width="52" />
             </a>
         </div>
 

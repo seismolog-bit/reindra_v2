@@ -26,7 +26,7 @@ class TechnologyController extends Controller
             'image' => 'nullable'
         ]);
 
-        $image = '';
+        // $image = '';
 
         if ($request->id) {
             $technology = Technology::find($request->id);
@@ -61,7 +61,7 @@ class TechnologyController extends Controller
             'id' => $request->id
         ], [
             'title' => $request->title,
-            'image' => $image,
+            'image' => $image ?? null,
         ]);
 
         return redirect()->back()->with('success', 'Data saved successfully');
