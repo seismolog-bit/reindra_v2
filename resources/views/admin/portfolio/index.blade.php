@@ -13,9 +13,9 @@
         <div class="row align-items-center justify-content-between g-3 mb-4">
             <div class="col col-auto">
                 <div class="search-box">
-                    <form class="position-relative" data-bs-toggle="search" data-bs-display="static"><input
-                            class="form-control search-input search" type="search" placeholder="Search portfolios"
-                            aria-label="Search" />
+                    <form class="position-relative" data-bs-toggle="search" data-bs-display="static">
+                        <input class="form-control search-input search" type="search" placeholder="Search portfolios"
+                            aria-label="Search" name="search" />
                         <span class="fas fa-search search-box-icon"></span>
                     </form>
                 </div>
@@ -52,8 +52,8 @@
                             <tr class="hover-actions-trigger btn-reveal-trigger position-static">
                                 <td class="title align-middle white-space-nowrap"><a
                                         class="d-flex align-items-center text-body text-hover-1000" href="#!">
-                                        <img src="{{ asset($portfolio->image) }}" alt="" width="53" height="53"
-                                        class="rounded" style="object-fit: cover;"/>
+                                        <img src="{{ Storage::url($portfolio->image) }}" alt="" width="53"
+                                            height="53" class="rounded" style="object-fit: cover;" />
                                         <h6 class="mb-0 ms-3 fw-semibold">{{ $portfolio->title }}</h6>
                                     </a>
                                 </td>
@@ -95,7 +95,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5">Data not found</td>
+                                <td colspan="7">Data not found</td>
                             </tr>
                         @endforelse
                     </tbody>

@@ -28,15 +28,17 @@ Auth::routes(['register' => false]);
 
 Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-    
+
     // Apps
     Route::resource('portfolio', App\Http\Controllers\Admin\PortfolioController::class)->parameters([
         'portfolio' => 'portfolio:slug',
     ]);
+
     Route::resource('portfolio-category', App\Http\Controllers\Admin\PortfolioCategoryController::class);
     Route::resource('experience', App\Http\Controllers\Admin\ExerienceController::class)->parameters([
         'experience' => 'experience:slug',
     ]);
+    Route::resource('technology', App\Http\Controllers\Admin\TechnologyController::class);
     Route::resource('pricing', App\Http\Controllers\Admin\PricingController::class);
 
     // Themes
@@ -48,4 +50,3 @@ Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () 
     Route::resource('user', App\Http\Controllers\Admin\UserController::class);
     Route::resource('config', App\Http\Controllers\Admin\ConfigController::class);
 });
-

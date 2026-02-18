@@ -3,39 +3,38 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Pricing;
+use App\Models\Technology;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 use Image;
-use File;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
 
-class PricingController extends Controller
+class TechnologyController extends Controller
 {
     public function index()
     {
-        $pricings = Pricing::orderBy('price', 'asc')->get();
+        $technologies = Technology::orderBy('title')->get();
 
-        return view('admin.pricing', compact('pricings'));
+        return view('admin.apps.technology', compact('technologies'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'title' => 'required',
-            'price' => 'required',
-            'description' => 'required',
+            'image' => 'nullable'
         ]);
 
+        $image = '';
+
         if ($request->id) {
-            $pricing = Pricing::find($request->id);
-            $image = $pricing->image;
+            $technology = Technology::find($request->id);
+            $image = $technology->image;
         }
 
         if ($request->hasFile('image')) {
-            $dir = 'images/pricings/';
+            $dir = 'images/technologies/';
             $file = $request->file('image');
             $extension = Str::lower($file->getClientOriginalExtension());
             $fileName = time() . '.' . $extension;
@@ -50,22 +49,19 @@ class PricingController extends Controller
             Storage::disk('public')->put($filePath, $image_file->encode());
 
             if ($request->id) {
-                if ($pricing->image && Storage::disk('public')->exists($pricing->image)) {
-                    Storage::disk('public')->delete($pricing->image);
+                if ($technology->image && Storage::disk('public')->exists($technology->image)) {
+                    Storage::disk('public')->delete($technology->image);
                 }
             }
 
             $image = $filePath;
         }
 
-        Pricing::updateOrCreate([
+        technology::updateOrCreate([
             'id' => $request->id
         ], [
             'title' => $request->title,
-            'price' => $request->price,
-            'description' => $request->description,
-            'recommended' => $request->recommended ? true : false,
-            'image' => $image ?? null,
+            'image' => $image,
         ]);
 
         return redirect()->back()->with('success', 'Data saved successfully');
@@ -73,17 +69,17 @@ class PricingController extends Controller
 
     public function edit($id)
     {
-        $pricing = Pricing::find($id);
-        return response()->json($pricing);
+        $technology = technology::find($id);
+        return response()->json($technology);
     }
 
-    public function destroy(Pricing $pricing)
+    public function destroy(technology $technology)
     {
-        if ($pricing->image && Storage::disk('public')->exists($pricing->image)) {
-            Storage::disk('public')->delete($pricing->image);
+        if ($technology->image && Storage::disk('public')->exists($technology->image)) {
+            Storage::disk('public')->delete($technology->image);
         }
 
-        $pricing->delete();
+        $technology->delete();
 
         return redirect()->back();
     }

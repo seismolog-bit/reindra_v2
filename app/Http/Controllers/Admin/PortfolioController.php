@@ -10,12 +10,21 @@ use Illuminate\Support\Str;
 
 use Image;
 use File;
+use Illuminate\Support\Facades\Storage;
 
 class PortfolioController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $portfolios = Portfolio::orderBy('year', 'desc')->get();
+        $query = Portfolio::query();
+
+        // dd($request->all());
+
+        if ($request->has('search')) {
+            $query->where('title', 'like', '%' . $request->search . '%');
+        }
+
+        $portfolios = $query->orderBy('title')->get();
 
         // dd($portfolios);
 
@@ -32,31 +41,30 @@ class PortfolioController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required', 
-            'description' => 'required', 
-            'year' => 'required', 
-            'tech' => 'required', 
-            'work' => 'required', 
+            'title' => 'required',
+            'description' => 'required',
+            'year' => 'required',
+            'tech' => 'required',
+            'work' => 'required',
             'portfolio_categories' => 'required'
-        ]); 
+        ]);
 
-        if($request->image)
-        {
+        if ($request->hasFile('image')) {
             $dir = 'images/porfolios/';
-            $url = $request->file('image');
-            $extention = Str::lower($url->getClientOriginalExtension());
+            $file = $request->file('image');
+            $extention = Str::lower($file->getClientOriginalExtension());
             $file_name = time() . '.' . $extention;
+            $filePath = $dir . $file_name;
 
             // image resize
-            $image_file = Image::make($url->getRealPath());
-            $image_file->resize(300, null, function($const) {
+            $image_file = Image::make($file->getRealPath());
+            $image_file->resize(1080, null, function ($const) {
                 $const->aspectRatio();
             });
 
-            $destination_path = public_path($dir);
-            $url->move($destination_path, $file_name);
+            Storage::disk('public')->put($filePath, $image_file->encode());
 
-            $image = $dir . $file_name;
+            $image = $filePath;
         }
 
         $portfolio = $request->all();
@@ -77,41 +85,42 @@ class PortfolioController extends Controller
     public function update(Request $request, Portfolio $portfolio)
     {
         $request->validate([
-            'title' => 'required', 
-            'description' => 'required', 
-            'year' => 'required', 
-            'tech' => 'required', 
-            'work' => 'required', 
+            'title' => 'required',
+            'description' => 'required',
+            'year' => 'required',
+            'tech' => 'required',
+            'work' => 'required',
             'portfolio_categories' => 'required'
-        ]); 
+        ]);
 
-        if($request->image)
-        {
+        $image = $portfolio->image;
+
+        if ($request->hasFile('image')) {
             $dir = 'images/porfolios/';
-            $url = $request->file('image');
-            $extention = Str::lower($url->getClientOriginalExtension());
+            $file = $request->file('image');
+            $extention = Str::lower($file->getClientOriginalExtension());
             $file_name = time() . '.' . $extention;
+            $filePath = $dir . $file_name;
 
             // image resize
-            $image_file = Image::make($url->getRealPath());
-            $image_file->resize(300, null, function($const) {
+            $image_file = Image::make($file->getRealPath());
+            $image_file->resize(1080, null, function ($const) {
                 $const->aspectRatio();
             });
 
-            $destination_path = public_path($dir);
-            $url->move($destination_path, $file_name);
+            Storage::disk('public')->put($filePath, $image_file->encode());
 
-            $image = $dir . $file_name;
+            $image = $filePath;
 
             // menghaspus file
-            if (File::exists($portfolio->image)) {
-                File::delete($portfolio->image);
+            if ($portfolio->image && Storage::disk('public')->exists($portfolio->image)) {
+                Storage::disk('public')->delete($portfolio->image);
             }
         }
 
         $portfolio->title = $request->title;
         $portfolio->work = $request->work;
-        $portfolio->image = $request->image ? $image : $portfolio->image;
+        $portfolio->image = $image;
         $portfolio->description = $request->description;
         $portfolio->year = $request->year;
         $portfolio->tech = $request->tech;
@@ -125,8 +134,8 @@ class PortfolioController extends Controller
 
     public function destroy(Portfolio $portfolio)
     {
-        if (File::exists($portfolio->image)) {
-            File::delete($portfolio->image);
+        if ($portfolio->image && Storage::disk('public')->exists($portfolio->image)) {
+            Storage::disk('public')->delete($portfolio->image);
         }
 
         $portfolio->delete();

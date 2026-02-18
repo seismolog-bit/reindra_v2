@@ -8,7 +8,7 @@
             <!-- intro -->
             <div class="intro">
                 <!-- avatar image -->
-                <img src="{{asset('images/avatar.png')}}" alt="Reindra" class="mb-4" />
+                <img src="{{ asset('images/avatar.png') }}" alt="Reindra" class="mb-4" />
 
                 <!-- info -->
                 <h1 class="mb-2 mt-0">Indra Wahyudi</h1>
@@ -17,9 +17,12 @@
 
                 <!-- social icons -->
                 <ul class="social-icons light list-inline mb-0 mt-4">
-                    <li class="list-inline-item"><a href="https://github.com/seismolog-bit/"><i class="fab fa-github"></i></a></li>
-                    <li class="list-inline-item"><a href="https://linkedin.com/in/reindra/"><i class="fab fa-linkedin"></i></a></li>
-                    <li class="list-inline-item"><a href="https://www.instagram.com/indrwyi/"><i class="fab fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="https://github.com/seismolog-bit/"><i
+                                class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item"><a href="https://linkedin.com/in/reindra/"><i
+                                class="fab fa-linkedin"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/reindradotcom/"><i
+                                class="fab fa-instagram"></i></a></li>
                     {{-- <li class="list-inline-item"><a href="#"><i class="fab fa-dribbble"></i></a></li> --}}
                 </ul>
 
@@ -59,7 +62,7 @@
                 <div class="col-md-3">
                     <div class="text-center text-md-left">
                         <!-- avatar image -->
-                        <img src="{{asset('images/avatar.png')}}" alt="Reindra" />
+                        <img src="{{ asset('images/avatar.png') }}" alt="Reindra" />
                     </div>
                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                 </div>
@@ -69,7 +72,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <!-- about text -->
-                                <p>I'm Indra Wahyudi, a mobile and web developer from West Java, Indonesia. I have rich experience in the design and development of mobile applications with Flutter framework, websites and customization.
+                                <p>I'm Indra Wahyudi, a mobile and web developer from West Java, Indonesia. I have rich
+                                    experience in the design and development of mobile applications with Flutter framework,
+                                    websites and customization.
                                 </p>
                                 <div class="mt-3">
                                     <a href="#" class="btn btn-default">Download CV</a>
@@ -81,11 +86,11 @@
                                 <div class="skill-item">
                                     <div class="skill-info clearfix">
                                         <h4 class="float-left mb-3 mt-0">Development</h4>
-                                        <span class="float-right">85%</span>
+                                        <span class="float-right">90%</span>
                                     </div>
                                     <div class="progress">
                                         <div class="progress-bar data-background" role="progressbar" aria-valuemin="0"
-                                            aria-valuemax="100" aria-valuenow="85" data-color="#FFD15C">
+                                            aria-valuemax="100" aria-valuenow="90" data-color="#FFD15C">
                                         </div>
                                     </div>
                                     <div class="spacer" data-height="20"></div>
@@ -95,11 +100,11 @@
                                 <div class="skill-item">
                                     <div class="skill-info clearfix">
                                         <h4 class="float-left mb-3 mt-0">UI/UX design</h4>
-                                        <span class="float-right">90%</span>
+                                        <span class="float-right">85%</span>
                                     </div>
                                     <div class="progress">
                                         <div class="progress-bar data-background" role="progressbar" aria-valuemin="0"
-                                            aria-valuemax="100" aria-valuenow="90" data-color="#FF4C60">
+                                            aria-valuemax="100" aria-valuenow="85" data-color="#FF4C60">
                                         </div>
                                     </div>
                                     <div class="spacer" data-height="20"></div>
@@ -198,10 +203,10 @@
                     <!-- service box -->
                     <div class="service-box rounded data-background padding-30 text-center text-light shadow-blue"
                         data-color="#6C6CE5">
-                        <img src="images/service-1.svg" alt="UI/UX design" />
-                        <h3 class="mb-3 mt-0">UI/UX design</h3>
-                        {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
-                            ligula eget.</p> --}}
+                        <img src="{{ asset('assets/img/icons/icon-vector.png') }}" style="width: 72px"
+                            alt="Graphic Design" />
+                        <h3 class="mb-3 mt-0">Graphic Design</h3>
+                        <p class="mb-0">Visual that communicate, design that converts.</p>
                     </div>
                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                 </div>
@@ -210,10 +215,10 @@
                     <!-- service box -->
                     <div class="service-box rounded data-background padding-30 text-center shadow-yellow"
                         data-color="#F9D74C">
-                        <img src="images/service-2.svg" alt="UI/UX design" />
-                        <h3 class="mb-3 mt-0">Web Development</h3>
-                        {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
-                            ligula eget.</p> --}}
+                        <img src="{{ asset('assets/img/icons/icon-app-dev.png') }}" style="width: 72px"
+                            alt="Mobbile Development" />
+                        <h3 class="mb-3 mt-0">Mobile Development</h3>
+                        <p class="mb-0">Building seamless mobile experiences for modern users.</p>
                     </div>
                     <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                 </div>
@@ -222,10 +227,10 @@
                     <!-- service box -->
                     <div class="service-box rounded data-background padding-30 text-center text-light shadow-pink"
                         data-color="#F97B8B">
-                        <img src="images/service-3.svg" alt="UI/UX design" />
-                        <h3 class="mb-3 mt-0">Photography</h3>
-                        {{-- <p class="mb-0">Lorem ipsum dolor sit amet consectetuer adipiscing elit aenean commodo
-                            ligula eget.</p> --}}
+                        <img src="{{ asset('assets/img/icons/icon-web-dev.png') }}" style="width: 72px"
+                            alt="Web Development" />
+                        <h3 class="mb-3 mt-0">Web Development</h3>
+                        <p class="mb-0">Modern websites built for speed, performance, and growth.</p>
                     </div>
                 </div>
 
@@ -378,16 +383,16 @@
                                     <span class="more-button"><i class="icon-options"></i></span>
                                 </div>
                                 <div class="thumb">
-                                    <img src="{{ asset($portfolio->image) }}" alt="{{ $portfolio->title }}" />
+                                    <img src="{{ Storage::url($portfolio->image) }}" alt="{{ $portfolio->title }}" />
                                     <div class="mask"></div>
                                 </div>
                             </div>
                         </a>
                         <div id="small-{{ $portfolio->slug }}" class="white-popup zoom-anim-dialog mfp-hide">
-                            <img class="w-100 rounded" src="{{ asset($portfolio->image) }}"
+                            <img class="w-100 rounded" src="{{ Storage::url($portfolio->image) }}"
                                 alt="{{ $portfolio->title }}" />
                             <h2>{{ $portfolio->title }}</h2>
-                            <p>{{ $portfolio->year->format('M Y') }} | As {{$portfolio->work}}</p>
+                            <p>{{ $portfolio->year->format('M Y') }} | As {{ $portfolio->work }}</p>
                             <p>{{ $portfolio->description }}</p>
                             <p>Tech: {{ $portfolio->tech }}</p>
                             <a href="{{ $portfolio->url }}" class="btn btn-default">View project</a>
@@ -431,7 +436,8 @@
                             @if ($pricing->recommended)
                                 <span class="badge">Recommended</span>
                             @endif
-                            <img src="{{ asset($pricing->image) }}" alt="{{ $pricing->title }}" />
+                            <img src="{{ Storage::url($pricing->image) }}" alt="{{ $pricing->title }}"
+                                style="width: 70px" />
                             <h2 class="plan">{{ $pricing->title }}</h2>
                             <div class="price-description">
                                 {!! $pricing->description !!}
@@ -491,70 +497,16 @@
         </div> --}}
 
             <div class="row">
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-1.svg" alt="client-name" />
+                @foreach ($technologies as $technology)
+                    <div class="col-md-3 col-6">
+                        <!-- client item -->
+                        <div class="client-item">
+                            <div class="inner">
+                                <img src="{{ Storage::url($technology->image) }}" alt="{{ $technology->title }}" style="height: 48px; filter: grayscale(1);" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-2.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-3.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-4.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-5.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-6.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-7.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <!-- client item -->
-                    <div class="client-item">
-                        <div class="inner">
-                            <img src="images/client-8.svg" alt="client-name" />
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>
@@ -658,7 +610,8 @@
                     <!-- contact info -->
                     <div class="contact-info">
                         <h3 class="wow fadeInUp">Let's talk about everything!</h3>
-                        <p class="wow fadeInUp">Don't like forms? Send me an <a href="mailto:reindrawahyudi@gmail.com">email</a>.
+                        <p class="wow fadeInUp">Don't like forms? Send me an <a
+                                href="mailto:reindrawahyudi@gmail.com">email</a>.
                             👋
                         </p>
                     </div>

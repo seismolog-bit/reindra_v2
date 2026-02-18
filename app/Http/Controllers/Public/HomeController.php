@@ -13,6 +13,7 @@ use App\Models\ThemeTag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
+use App\Models\Technology;
 
 class HomeController extends Controller
 {
@@ -22,8 +23,9 @@ class HomeController extends Controller
         $portfolio_categories = PortfolioCategory::get();
         $experiences = Experience::orderBy('start_year', 'desc')->get();
         $pricings = Pricing::get();
+        $technologies = Technology::all();
 
-        return view('public.index', compact('portfolios', 'portfolio_categories', 'experiences', 'pricings'));
+        return view('public.index', compact('portfolios', 'portfolio_categories', 'experiences', 'pricings', 'technologies'));
     }
 
     public function pricingShow($slug)
