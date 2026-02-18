@@ -8,7 +8,8 @@
                         class="fas fa-times fs-9 text-white dark__text-gray-1100"></span></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" action="{{ route('admin.pricing.store') }}" method="post" enctype="multipart/form-data">
+                <form class="row g-3" action="{{ route('admin.pricing.store') }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf
 
                     <div class="col-md-12 form-floating">
@@ -19,7 +20,7 @@
                     <div class="col-md-6">
                         <div class="form-floating">
                             <input class="form-control" id="floatTitle" type="text" placeholder="Price"
-                                name="price" value="{{ old('price') }}" required />
+                                name="price" value="{{ old('price') }}" />
                             <label for="floatTitle">Price</label>
                         </div>
                     </div>
@@ -40,7 +41,8 @@
 
                     <div class="col-md-6">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" id="recommended" type="checkbox" name="recommended"><label class="form-check-label fs-8" for="recommended">Is
+                            <input class="form-check-input" id="recommended" type="checkbox" name="recommended"><label
+                                class="form-check-label fs-8" for="recommended">Is
                                 recommended?</label>
                         </div>
                     </div>

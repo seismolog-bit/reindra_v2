@@ -443,8 +443,10 @@
                                 {!! $pricing->description !!}
                             </div>
                             <p class="mt-2">24/7 support</p>
-                            <h3 class="price">{{ number_format($pricing->price) }}</h3>
-                            <a href="{{ route('pricing.show', $pricing->slug) }}" class="btn btn-default">Get Started</a>
+                            <h3 class="price">{{ $pricing->price }}</h3>
+                            @if ($pricing->price === null)
+                                <a href="#contact" class="btn btn-default">Start a Project</a>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -502,7 +504,8 @@
                         <!-- client item -->
                         <div class="client-item">
                             <div class="inner">
-                                <img src="{{ Storage::url($technology->image) }}" alt="{{ $technology->title }}" style="height: 48px; filter: grayscale(1);" />
+                                <img src="{{ Storage::url($technology->image) }}" alt="{{ $technology->title }}"
+                                    style="height: 48px; filter: grayscale(1);" />
                             </div>
                         </div>
                     </div>

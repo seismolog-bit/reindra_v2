@@ -20,14 +20,13 @@
                     <div class="col-md-6">
                         <div class="form-floating">
                             <input class="form-control" id="editPrice" type="text" placeholder="Price"
-                                name="price" required />
+                                name="price" />
                             <label for="editPrice">Price</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input class="form-control" type="file" placeholder="Image"
-                                name="image" />
+                            <input class="form-control" type="file" placeholder="Image" name="image" />
                             <label for="editImage">Image</label>
                         </div>
                     </div>
@@ -41,7 +40,8 @@
 
                     <div class="col-md-6">
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="editRecommended" name="recommended"><label class="form-check-label fs-8" for="recommended">Is
+                            <input class="form-check-input" type="checkbox" id="editRecommended"
+                                name="recommended"><label class="form-check-label fs-8" for="recommended">Is
                                 recommended?</label>
                         </div>
                     </div>

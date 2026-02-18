@@ -25,7 +25,7 @@ class PricingController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'price' => 'required',
+            // 'price' => 'required',
             'description' => 'required',
         ]);
 

@@ -38,9 +38,9 @@
                     <thead>
                         <tr>
                             <th class="sort align-middle" scope="col" data-sort="title"
-                                style="width:15%; min-width:200px;">Title</th>
+                                style="width:15%; min-width:200px;">TITLE</th>
                             <th class="sort align-middle" scope="col" data-sort="price"
-                                style="width:15%; min-width:200px;">TYPE</th>
+                                style="width:15%; min-width:200px;">PRICE</th>
                             <th class="sort align-middle" scope="col" data-sort="recommended" style="width:10%;">IS
                                 RECOMMENDED</th>
                             <th class="sort align-middle text-end" scope="col" style="width:21%;  min-width:200px;">
@@ -58,7 +58,7 @@
                                     </a>
                                 </td>
                                 <td class="price align-middle white-space-nowrap">
-                                    {{ number_format($pricing->price) }}
+                                    {{ $pricing->price }}
                                 </td>
                                 <td class="recommended align-middle white-space-nowrap text-body">
                                     {{ $pricing->recommended ? 'Recommended' : '' }}</td>

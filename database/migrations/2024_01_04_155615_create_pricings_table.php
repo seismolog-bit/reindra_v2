@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->decimal('price', 16, 0);
+            $table->string('price')->nullable();
             $table->boolean('recommended')->default(0);
             $table->string('image')->nullable();
             $table->text('description');
