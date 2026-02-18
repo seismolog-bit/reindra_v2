@@ -3,17 +3,38 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>{{ config('app.name', 'Laravel') }} | Web & Mobile Developer</title>
+    <title>{{ config('app.name', 'Laravel') }} | Web Developer Laravel & Flutter Indonesia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('logo.jpg') }}">
 
-    <meta name="author" content="Indra Wahyudi">
+    <meta name="description"
+        content="Reindra adalah Web & Mobile Developer spesialis Laravel dan Flutter di Indonesia. Membangun website, aplikasi mobile, dan sistem custom yang modern, cepat, dan scalable untuk bisnis berkembang.">
+
     <meta name="keywords"
-        content="Web Developer Indonesia, Laravel Developer, Flutter Developer, Jasa Pembuatan Website, Mobile App Developer">
-    <meta property="og:title" content="{{ config('app.name', 'Laravel') }} | Web & Mobile Developer">
-    <meta property="og:description"
-        content="Spesialis Laravel dan Flutter. Membangun website dan aplikasi modern untuk bisnis berkembang.">
+        content="Web Developer Indonesia, Laravel Developer, Flutter Developer, Jasa Pembuatan Website, Mobile App Developer, Fullstack Developer Indonesia">
+
+    <meta name="author" content="Reindra">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://reindra.com/">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
     <meta property="og:type" content="website">
+    <meta property="og:title" content="Reindra | Web Developer Laravel & Flutter Indonesia">
+    <meta property="og:description"
+        content="Spesialis Laravel & Flutter. Membangun website dan aplikasi mobile modern untuk bisnis berkembang di Indonesia.">
+    <meta property="og:url" content="https://reindra.com/">
+    <meta property="og:site_name" content="Reindra Portfolio">
+
+    <!-- Ganti dengan URL gambar preview kamu -->
+    <meta property="og:image" content="{{ asset('logo.jpg') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reindra | Web Developer Laravel & Flutter Indonesia">
+    <meta name="twitter:description"
+        content="Web Developer Indonesia spesialis Laravel & Flutter. Solusi website dan aplikasi mobile profesional.">
+    <meta name="twitter:image" content="{{ asset('logo.jpg') }}">
 
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{ asset('css/all.min.css') }}" type="text/css" media="all">
