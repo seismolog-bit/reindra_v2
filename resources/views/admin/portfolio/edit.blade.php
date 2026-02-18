@@ -88,7 +88,7 @@
                 <div class="col-sm-6 col-md-6">
                     <div class="form-floating">
                         <input class="form-control" id="projectAsGrid" type="text" placeholder="Project title"
-                            name="work" required /><label for="projectAsGrid">Project as</label>
+                            name="work" value="{{ old('work', $portfolio->work) }}" required /><label for="projectAsGrid">Project as</label>
                     </div>
                 </div>
 
