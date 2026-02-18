@@ -28,7 +28,7 @@
 <body>
 
     <!-- Preloader -->
-    {{-- <div id="preloader" class="light">
+    <div id="preloader" class="light">
         <div class="outer">
             <!-- Google Chrome -->
             <div class="infinityChrome">
@@ -61,7 +61,7 @@
                 </defs>
             </svg>
         </div>
-    </div> --}}
+    </div>
 
     <!-- mobile header -->
     <header class="mobile-header-1 light">
