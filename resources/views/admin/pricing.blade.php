@@ -116,7 +116,7 @@
 
     <script>
         $(function() {
-            $('#summernote').summernote({
+            $('#summernote, #editDescription').summernote({
                 height: 140, // set editor height
                 minHeight: null, // set minimum height of editor
                 maxHeight: null, // set maximum height of editor
@@ -138,7 +138,7 @@
         function openEditModal(pricingId) {
 
             // Ajax request to get pricing data
-            $.get('/admin/pricing/' + pricingId + '/edit/', function(data) {
+            $.get('/admin/pricing/' + pricingId + '/edit', function(data) {
                 // Populate modal fields with data
                 $('#editId').val(data.id);
                 $('#editTitle').val(data.title);
@@ -158,7 +158,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '/admin/pricing/',
+                url: "{{ route('admin.pricing.store') }}",
                 data: formData,
                 contentType: false,
                 processData: false,
